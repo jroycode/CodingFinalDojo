@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="d-flex justify-content-around align-items-center col-12">
+        <h1 class="text">Sasquatch Websighting</h1>
+        <div class="d-inline block col-2 justify-content-around">
+            <h2 class="text">{{user.first_name}} {{user.last_name}}</h2>
+            <a href="/user/dashboard" class="btn btn-primary">Dashboard</a>
+            <a href="/user/logout" class="btn btn-info">Logout</a>
+        </div>
+    </nav>
+
+    <div class="card col-10 mx-auto my-5">
+        <div class="card-body">
+            <h2 class="card-title text-primary">{{sighting.location}} on {{sighting.date_made.strftime('%Y-%m-%d')}}</h2>
+            <p class="card-text">What Happened:</p>
+            <p class="card-text">{{sighting.description}}</p>
+            <p class="card-text"># of Sasquatches: {{sighting.sasquatches_seen}}</p>
+            <p class="card-text">Reported by: {{sighting.first_name}} {{sighting.last_name}}</p>
+        </div>
+    </div>
+</body>
+</html>
